@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 class GoodReads(object):
     def __init__(self):
-        print "Starting..."
+        print "Quotes:"
 
     def get_quotes(self, url):
         r = requests.get(url)
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     choice = input("1. Popular\n2. Recently added")
     if choice == 2:
         suffix = 'recently_added'
-    url = 'https://www.goodreads.com/quotes/{}'.format(choice)
+    url = 'https://www.goodreads.com/quotes/{}'.format(suffix)
     scraper = GoodReads()
     for quote in scraper.get_quotes(url):
         print quote
